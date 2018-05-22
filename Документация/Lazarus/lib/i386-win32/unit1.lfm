@@ -1,0 +1,89 @@
+object Form1: TForm1
+  Left = 164
+  Height = 240
+  Top = 63
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '1.8.2.0'
+  object DBGrid1: TDBGrid
+    Left = 296
+    Height = 384
+    Top = 16
+    Width = 696
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 104
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Подключение'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 104
+    Height = 25
+    Top = 112
+    Width = 75
+    Caption = 'Операция'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 208
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Соединение'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Left = 200
+    Height = 25
+    Top = 112
+    Width = 75
+    Caption = 'Отключение'
+    OnClick = Button4Click
+    TabOrder = 4
+  end
+  object MySQL51Connection1: TMySQL51Connection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = MySQL51Connection1AfterConnect
+    DatabaseName = 'spravocnik fanata'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = '127.0.0.1'
+    SkipLibraryVersionCheck = False
+    left = 48
+    top = 10
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL51Connection1
+    left = 152
+    top = 8
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL51Connection1
+    Transaction = SQLTransaction1
+    ReadOnly = True
+    Params = <>
+    left = 232
+    top = 10
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 32
+    top = 88
+  end
+end
